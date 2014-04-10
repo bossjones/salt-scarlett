@@ -1,44 +1,38 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+Vagrant.configure("2")  do |config|
 
-VAGRANTFILE_API_VERSION = "2"
+  # base information
+  config.vm.box = "scarlettpi_v1"
+  config.vm.box_url = "/Users/malcolm/dev/basebox-packer/virtualbox/ubuntu1204-desktop-provisionerless.box"
 
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # ssh config
+  #config.ssh.username = "bossjones"
+  #config.ssh.private_key_path = "~/.ssh/id_rsa_ssh"
 
-  config.vm.define "scarlettpidev" do |saltnode|
+  # name
+  # CHANGME
+  config.vm.hostname = "scarlettpidev"
 
-    saltnode.vm.box = "scarlettpi_v1"
-    saltnode.vm.box_url = "/Users/malcolm/dev/basebox-packer/virtualbox/ubuntu1204-desktop-provisionerless.box"
-    
-    saltnode.vm.hostname = "scarlettpidev"
-    saltnode.vm.network "private_network", ip: "192.168.58.102"
-    #saltnode.vm.forward_port 80, 8000
-    #saltnode.vm.forward_port 22, 3022
-
-    saltnode.vm.provision :salt do |salt|
-      salt.minion_config = Dir.pwd + "/minion.conf"
-      salt.run_highstate = true
-      salt.install_type = "stable"
-    end    
-
-  end
+  # networking
+  config.vm.network "private_network", ip: "192.168.56.101"
+  config.vm.network "forwarded_port", guest: 80, host: 8180
+  config.vm.network "forwarded_port", guest: 443, host: 4443
+  
+  #vb.share_folder "salt_file_root", "/srv/salt", Dir.pwd
+  #vb.share_folder "salt_pillar_root", "/srv/pillar", Dir.pwd + "/pillar/" 
 
   config.vm.provider :virtualbox do |vb|
-
     # Don't boot with headless mode
-    vb.gui = false
+    vb.gui = true
 
     # use host dns resolver
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-
-    # Use VBoxManage to customize the VM. For example to change memory:
     vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
 
-    #vb.forward_port 80, 8000
-    #vb.forward_port 22, 3022
-    #vb.share_folder "salt_file_root", "/srv/salt", Dir.pwd
-    #vb.share_folder "salt_pillar_root", "/srv/pillar", Dir.pwd + "/pillar/" 
-
+  config.vm.provision :salt do |salt|
+    salt.minion_config = Dir.pwd + "/minion.conf"
+    salt.run_highstate = true
+    salt.install_type = "stable"
   end
 
 end
