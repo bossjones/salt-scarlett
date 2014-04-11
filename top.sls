@@ -2,3 +2,5 @@ base:
     '*':
         - requirements
         - gstreamer
+        - audio
+        
