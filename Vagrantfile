@@ -1,3 +1,6 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 Vagrant.configure("2")  do |config|
 
   # base information
@@ -17,8 +20,11 @@ Vagrant.configure("2")  do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8180
   config.vm.network "forwarded_port", guest: 443, host: 4443
   
-  #vb.share_folder "salt_file_root", "/srv/salt", Dir.pwd
-  #vb.share_folder "salt_pillar_root", "/srv/pillar", Dir.pwd + "/pillar/" 
+  #config.vm.share_folder "salt_file_root", "/srv/salt", Dir.pwd
+  #config.vm.share_folder "salt_pillar_root", "/srv/pillar", Dir.pwd + "/pillar/" 
+  #config.vm.synced_folder "", "/srv/saclett-salt"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
 
   config.vm.provider :virtualbox do |vb|
     # Don't boot with headless mode
