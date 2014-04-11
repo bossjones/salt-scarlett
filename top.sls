@@ -4,3 +4,4 @@ base:
         - gstreamer
         - audio
         - tools
+        - scarlett

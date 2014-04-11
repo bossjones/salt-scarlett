@@ -20,4 +20,39 @@ packages:
             - sox 
             - mplayer 
             - ffmpeg
+            - alsa-oss 
+            - alsaplayer 
+            - mpg321 
+            - alsaplayer-alsa 
+            - alsa-base
+            - pavucontrol 
+            - pulseaudio
+            - libao4
+            - libasound2-plugins
+            - libgconfmm-2.6-1c2
+            - libglademm-2.4-1c2a
+            - libpulse-dev
+            - libpulse-mainloop-glib0
+            - libpulse-mainloop-glib0-dbg
+            - libpulse0
+            - libpulse0-dbg
+            - libsox-fmt-pulse
+            - paman
+            - paprefs
+            - pavucontrol
+            - pavumeter
+            - pulseaudio
+            - pulseaudio-dbg
+            - pulseaudio-esound-compat
+            - pulseaudio-esound-compat-dbg
+            - pulseaudio-module-bluetooth
+            - pulseaudio-module-gconf
+            - pulseaudio-module-jack
+            - pulseaudio-module-lirc
+            - pulseaudio-module-lirc-dbg
+            - pulseaudio-module-x11
+            - pulseaudio-module-zeroconf
+            - pulseaudio-module-zeroconf-dbg
+            - pulseaudio-utils
+            - oss-compat
 

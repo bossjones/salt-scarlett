@@ -18,3 +18,23 @@ packages:
             - gstreamer0.10-plugins-ugly-dbg
             - gstreamer0.10-plugins-ugly-doc
             - gstreamer0.10-sdl
+            - gstreamer0.10-ffmpeg
+            - gstreamer-tools
+            - gstreamer0.10-alsa
+            - gstreamer0.10-nice
+            - gstreamer0.10-plugins-good
+            - gstreamer0.10-plugins-bad
+            - gstreamer0.10-plugins-ugly
+            - gstreamer0.10-tools
+            - libgstreamer-plugins-bad0.10-0
+            - libgstreamer-plugins-bad0.10-dev
+            - libgstreamer-plugins-base0.10-0
+            - libgstreamer-plugins-base0.10-dev
+            - libgstreamer0.10-0
+            - libgstreamer0.10-0-dbg
+            - libgstreamer0.10-cil-dev
+            - libgstreamer0.10-dev
+            - libgstrtspserver-0.10-0
+            - libgstrtspserver-0.10-dev
+            - libnice-dev
+            - gstreamer0.10-pulseaudio
