@@ -25,8 +25,8 @@ Vagrant.configure("2")  do |config|
 
   puts Dir.pwd
 
-  config.vm.synced_folder Dir.pwd, "/srv/salt/"
-  config.vm.synced_folder Dir.pwd + "/pillar/", "/srv/pillar/"
+  config.vm.synced_folder Dir.pwd + "/salt/roots", "/srv/"
+  #config.vm.synced_folder Dir.pwd + "/pillar/", "/srv/pillar/"
 
   config.vm.provider :virtualbox do |vb|
     # Don't boot with headless mode
@@ -34,7 +34,7 @@ Vagrant.configure("2")  do |config|
 
     # use host dns resolver
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--memory", "512"]
   end
 
   config.vm.provision :salt do |salt|
