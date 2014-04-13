@@ -20,11 +20,11 @@ Vagrant.configure("2")  do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8180
   config.vm.network "forwarded_port", guest: 443, host: 4443
 
-  config.vm.synced_folder Dir.pwd + "salt/roots/", "/srv/"
+  config.vm.synced_folder "salt/roots/", "/srv/"
 
   config.vm.provider :virtualbox do |vb|
     # Don't boot with headless mode
-    vb.gui = true
+    vb.gui = false
 
     # use host dns resolver
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
