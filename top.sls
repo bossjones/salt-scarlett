@@ -5,3 +5,4 @@ base:
         - audio
         - tools
         - scarlett
+        - users

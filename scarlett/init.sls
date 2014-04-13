@@ -32,3 +32,6 @@ packages:
             - festival-freebsoft-utils
             - flite
             - espeak
+
+include:
+    - pi
