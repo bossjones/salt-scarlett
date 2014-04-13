@@ -19,14 +19,8 @@ Vagrant.configure("2")  do |config|
   config.vm.network "private_network", ip: "192.168.56.101"
   config.vm.network "forwarded_port", guest: 80, host: 8180
   config.vm.network "forwarded_port", guest: 443, host: 4443
-  
-  #config.vm.share_folder "salt_file_root", "/srv/salt", Dir.pwd
-  #config.vm.share_folder "salt_pillar_root", "/srv/pillar", Dir.pwd + "/pillar/"
 
-  puts Dir.pwd
-
-  config.vm.synced_folder Dir.pwd + "/salt/roots", "/srv/"
-  #config.vm.synced_folder Dir.pwd + "/pillar/", "/srv/pillar/"
+  config.vm.synced_folder Dir.pwd + "salt/roots/", "/srv/"
 
   config.vm.provider :virtualbox do |vb|
     # Don't boot with headless mode
@@ -40,7 +34,8 @@ Vagrant.configure("2")  do |config|
   config.vm.provision :salt do |salt|
     salt.minion_config = Dir.pwd + "/minion"
     salt.run_highstate = true
-    #salt.install_type = "stable"
+    salt.verbose = true
+    salt.install_type = "stable"
   end
 
 end
