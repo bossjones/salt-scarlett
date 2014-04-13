@@ -38,7 +38,7 @@ Vagrant.configure("2")  do |config|
   end
 
   config.vm.provision :salt do |salt|
-    salt.minion_config = Dir.pwd + "/minion.conf"
+    salt.minion_config = Dir.pwd + "/minion"
     salt.run_highstate = true
     #salt.install_type = "stable"
   end
