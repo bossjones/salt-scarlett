@@ -26,7 +26,7 @@ Vagrant.configure("2")  do |config|
 
   config.vm.provider :virtualbox do |vb|
     # Don't boot with headless mode
-    vb.gui = false
+    vb.gui = true
 
     # use host dns resolver
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
