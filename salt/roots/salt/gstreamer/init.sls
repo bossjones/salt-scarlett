@@ -1,4 +1,4 @@
-packages:
+gstreamer:
     pkg.installed:
         - names:
             - gstreamer0.10-alsa 

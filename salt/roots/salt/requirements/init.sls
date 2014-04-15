@@ -1,4 +1,4 @@
-packages:
+requirements:
     pkg.installed:
         - names:
             - python-virtualenv

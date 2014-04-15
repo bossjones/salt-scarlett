@@ -1,4 +1,4 @@
-packages:
+audio:
     pkg.installed:
         - names:
             - alsa-tools 
@@ -19,8 +19,7 @@ packages:
             - lame
             - sox 
             - mplayer 
-            - ffmpeg
-            - alsa-oss 
+            - ffmpeg 
             - alsaplayer 
             - mpg321 
             - alsaplayer-alsa 
@@ -28,7 +27,6 @@ packages:
             - pavucontrol 
             - pulseaudio
             - libao4
-            - libasound2-plugins
             - libgconfmm-2.6-1c2
             - libglademm-2.4-1c2a
             - libpulse-dev
@@ -41,7 +39,6 @@ packages:
             - paprefs
             - pavucontrol
             - pavumeter
-            - pulseaudio
             - pulseaudio-dbg
             - pulseaudio-esound-compat
             - pulseaudio-esound-compat-dbg

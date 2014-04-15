@@ -1,4 +1,4 @@
-packages:
+scarlett:
     pkg.installed:
         - names:
             - autoconf
@@ -32,6 +32,3 @@ packages:
             - festival-freebsoft-utils
             - flite
             - espeak
-
-include:
-    - pi
