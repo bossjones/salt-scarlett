@@ -1,0 +1,9 @@
+[submodule "salt/roots/formulas/ntp"]
+	path = salt/roots/formulas/ntp
+	url = git://github.com/saltstack-formulas/ntp-formula.git
+[submodule "salt/roots/formulas/openssh"]
+	path = salt/roots/formulas/openssh
+	url = git://github.com/saltstack-formulas/openssh-formula.git
+[submodule "salt/roots/formulas/users"]
+	path = salt/roots/formulas/users
+	url = git://github.com/saltstack-formulas/users-formula.git
