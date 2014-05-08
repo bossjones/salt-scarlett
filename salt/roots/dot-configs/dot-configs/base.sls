@@ -1,0 +1,4 @@
+include:
+  - .zsh
+  - .vim
+  - .tmux
